@@ -1,0 +1,99 @@
+:root{
+    --white: white;
+    --black: black;
+    --sidebar: #f7f7f7;
+    --color-hover: #0EAAE3;
+    --color-fondo: #0EA3E3;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --background-hover: rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-contacto{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:"header    header  header"
+                        "nav       nav     nav"
+                        "contenido  contenido   contenido"
+                        "footer     footer  footer";
+}
+
+.contenedor-contacto .header{
+    grid-area: header;
+}
+
+.contenedor-contacto .nav{
+    grid-area: nav;
+}
+
+.contenedor-contacto .footer{
+    grid-area: footer;
+}
+
+nav{
+    width: 100%;
+    height: auto;
+    display: flex;
+    background: var(--color-fondo);
+    justify-content: center;
+}
+
+nav label{
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 10px 15px;
+}
+
+#btn-menu{
+    display: none;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    background: var(--color-fondo);
+}
+
+nav a{
+    color: black;
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: white;
+    background: var(--background-hover);
+}
+
+@media (max-width: 768px){
+    nav{
+        display: flex;
+        justify-content: flex-end;
+    }
+    nav label{
+        display: block;
+    }
+    nav ul{
+        display: block;
+        background: var(--color-fondo);
+        box-shadow: inset 0em 1px var(--shadow);
+    }
+    .menu{
+        left: 0;
+        margin-top: 49px;
+        width: 100%;
+        position: absolute;
+        transition: all 0.5s;
+        transform: translateX(-100%);
+    }
+    nav ul{
+        display: block;
+    }
+
+    #btn-menu:checked ~ .menu{
+        transform: translateX(0%);
+    }
+}

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root{
+    --fuente: 'Roboto Slab', serif;
+    --background: #1F1F1F;
+    --shadow: rgba(0, 0, 0, .5);
+    --white: #ffffff;
+    --black: #000000;
+    --hover: #3C9CD6;
+    --hover2: #6E98E4;
+}
+
+body {
+    background: var(--background);
+    font-size: 1.125rem;
+    font-family: var(--fuente);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    padding: 10px 0;
+    line-height: 1.5625rem;
+}
+
+/**--------------------------------------------------------------*/
+            /*!----------------- contenido -----------------*/
+/**--------------------------------------------------------------*/
+
+.error{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas: "imagen informacion";
+}
+
+.error__imagen{
+    grid-area: imagen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error__img{
+    height: 100vh;
+    padding: 10px;
+    max-width: 372px;
+    max-height: 537px;
+}
+
+.error__informacion{
+    grid-area: informacion;
+    padding: 10px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.error__titulo{
+    padding: 10px;
+    text-align: center;
+}
+
+.error__enlace{
+    margin: 10px;
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: var(--black);
+    box-shadow: 3px 3px 3px var(--shadow);
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+    text-align: center;
+}
+
+.error__enlace:hover{
+    background-color: var(--hover);
+    box-shadow: 5px 5px 5px var(--shadow);
+}
+
+.error__enlace2:hover{
+    background-color: var(--hover2);
+}
+
+@media screen and (max-width: 850px){
+    body{
+        display: block;
+    }
+    .error{
+        grid-template-columns: 1fr;
+        grid-template-areas: "imagen"
+                            "informacion";
+    }
+}
