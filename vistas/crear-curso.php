@@ -51,7 +51,22 @@
         
             <form action="crearcurso.php">
 
+                <div class="inputs">
+                    <input type="date" name="fecha-seguimiento" id="fecha-seguimiento" title="Fecha de seguimiento." class="recolectores" required>
+                </div>
+
+                <div class="inputs">
+                    <input type="text" name="nombres-estudiante" id="nombres-estudiante" placeholder="Nombres del estudiante" title="Solo los nombres del estudiante." class="recolectores" required>
+                </div>
+
+                <div class="inputs">
+                    
+                    <center>
+                        <input type="reset" value="Limpiar" class="boton secundario">
+                        <input type="submit" value="Registrar"  class="boton primario">
+                    </center>
                 
+                </div>
 
             </form>
         </div>

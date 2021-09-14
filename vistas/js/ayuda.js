@@ -1,40 +1,142 @@
 (function(){
-    var sidebar = document.getElementById('sidebar'),
-        botones = sidebar.elements,
-        resultados = document.getElementById('resultados'),
-        divs = resultados.elements;
-    console.log(botones);
+    //!==============================================================
+    //!=========================== Categorias =============================
+    //!==============================================================
+    const categorias = document.querySelector('#categorias');
+    let sectionCategoria = document.querySelectorAll('.categoria');
+    let sectionCategoriaLast = sectionCategoria[sectionCategoria.length -1];
 
-    boton1.addEventListener("click", function(){
-        boton1.className = "boton-activo";
-        contraseña.style.display = "block";
-        original.style.display = "none";
-    })
-    boton2.addEventListener("click", function(){
-        boton2.className = "boton-activo";
-    })
-    boton3.addEventListener("click", function(){
-        boton3.className = "boton-activo";
-    })
-    boton4.addEventListener("click", function(){
-        boton4.className = "boton-activo";
-    })
-    boton5.addEventListener("click", function(){
-        boton5.className = "boton-activo";
-    })
-    boton6.addEventListener("click", function(){
-        boton6.className = "boton-activo";
-    })
+    // Redirecionar a la vista contacto
+    sectionCategoriaLast.addEventListener('click', ()=>{
+        swal.fire({
+            title: "Será redirecionado a la página de contacto",
+            text:"Allí podra dar a conocer su problema y tan pronto como sea posible le daremos respuesta.",
+            confirmButtonText: 'Ok, dejaré mi problema',
+            imageUrl: 'imagenes/error.gif',
+            imageWidth: 135,
+            imageHeight: 135,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+                }
+        });
+        setTimeout( ()=>{
+            location.href = "contacto.php";
+        }, 5000);
+    });
+
+    const btnLeft = document.querySelector('#btn-left');
+    const btnRight = document.querySelector('#btn-right');
+
+    if(screen.width < 769){
+
+    }else{
+        categorias.insertAdjacentElement('afterbegin', sectionCategoriaLast);
+    }
+
+    if(screen.width < 768){
+        var margin1 = -45;
+        var margin2 = -21.6;
+        var margin3 = -23;
+    }else{
+        margin1 = -34.2;
+        margin2 = -17.2;
+        margin3 = -17.2;
+    }
+
+    function moverDerecha(){
+        let sectionCategoriaFirst = document.querySelectorAll('.categoria')[0];
+        categorias.style.marginLeft = margin1 + "%";
+        categorias.style.transition = "all 0.3s";
+        setTimeout(() => {
+            categorias.style.transition = "none";
+            categorias.insertAdjacentElement('beforeend', sectionCategoriaFirst);
+            categorias.style.marginLeft = margin2 + "%";
+        }, 300);
+    };
+
+    function moverIzquierda(){
+        let sectionCategoria = document.querySelectorAll('.categoria');
+        let sectionCategoriaLast = sectionCategoria[sectionCategoria.length -1];
+        categorias.style.marginLeft = "0%";
+        categorias.style.transition = "all 0.3s";
+        setTimeout(() => {
+            categorias.style.transition = "none";
+            categorias.insertAdjacentElement('afterbegin', sectionCategoriaLast);
+            categorias.style.marginLeft = margin3 + "%";
+        }, 300);
+    };
+
+    btnRight.addEventListener('click', ()=>{
+        moverDerecha();
+    });
+
+    btnLeft.addEventListener('click', ()=>{
+        moverIzquierda();
+    });
+
+    // setInterval(()=>{
+    //     moverIzquierda();
+    // }, 5000);
 
 
-    
-    /* sidebar.addEventListener("click", function(){
-        sidebar.elementsclassName = 'boton-activo';
-        alert("Hola mundo");
-    })
+    //!==============================================================
+    //!=========================== Respuestas =============================
+    //!==============================================================
 
-    boton2.addEventListener("click", function(){
-        boton2.className = 'boton-activo';
-        alert("Boton2");
-    }) */
+    const categoriasMenu = document.querySelectorAll('#categorias .categoria');
+    const contenedorPreguntas = document.querySelectorAll('.contenedor-preguntas');
+    let categoriaActiva = null;
+
+    categoriasMenu.forEach( (categoria) => {
+        categoria.addEventListener('click', (e) =>{
+            categoriasMenu.forEach((elemento) => {
+                elemento.classList.remove('activa');
+            });
+            e.currentTarget.classList.toggle('activa');
+            categoriaActiva = categoria.dataset.categoria;
+
+            // Activamos el contenedor de pregunta que correnponda
+            contenedorPreguntas.forEach( (contenedor) => {
+                if(contenedor.dataset.categoria === categoriaActiva){
+                    contenedor.classList.add('activo');
+                }else{
+                    contenedor.classList.remove('activo');
+                }
+            });
+        });
+    });
+
+    const preguntas = document.querySelectorAll('.preguntas .contenedor-pregunta');
+    preguntas.forEach( (pregunta) => {
+        pregunta.addEventListener('click', (e) => {
+            e.currentTarget.classList.toggle('activa');
+
+            const respuesta = pregunta.querySelector('.respuesta');
+            const alturaRealRespuesta = respuesta.scrollHeight;
+            
+            if(!respuesta.style.maxHeight){
+                // Si está vacio e maxHeight le agragamos in valor.
+                respuesta.style.maxHeight = alturaRealRespuesta + 'px';
+            }else{
+                respuesta.style.maxHeight = null;
+            }
+
+            // Reiniciar preguntas
+            preguntas.forEach( (elemento) => {
+                if(pregunta !== elemento){
+                    elemento.classList.remove('activa');
+                    elemento.querySelector('.respuesta').style.maxHeight = null;
+                }
+            });
+
+
+
+
+        });
+    });
+
+
 }())

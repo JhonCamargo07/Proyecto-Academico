@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/ayuda.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="shortcut icon" href="imagenes/escudo.jpg">
+    <script src="https://kit.fontawesome.com/dca352768f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>Ayuda | Colegio Rafael Uribe Uribe</title>
 </head>
 <body>
@@ -36,23 +38,141 @@
                 
                     <li><a href="contacto.php" class="botones"><span class="icon-phone"></span>Contacto</a></li>
 
-                    <li><a class="botones activo"><span class="icon-question-circle pregunta"></span>Ayuda</a></li>
+                    <li><a class="botones activo"><span class="icon-question-circle"></span>Ayuda</a></li>
                 </ul>
             </div>
 
         </nav>
 
-        <aside class="sidebar" id="sidebar">
-                <button id="boton1"><span class="icon-lock-open"></span>Olvidé mi contraseña ¿Qué hago?</button>
-                <button id="boton2"><span class="icon-enter"></span>¿Cómo puedo ingresar?</button>
-                <button id="boton3"><span class="icon-user-plus"></span>¿Cómo gestionar?</button>
-                <button id="boton4"><span class="icon-spinner11"></span>¿Cómo actualizar?</button>
-                <button id="boton5"><span class="icon-search"></span>¿Cómo consultar?</button>
-                <button id="boton6"><span class="icon-user-minus"></span>¿Cómo inactivar?</button>
-                <a href="contacto.php" class="width"><button><span class="icon-plus-alt"></span>Otras opciones</button></a>
-        </aside>
+        <!--!==============================================================-->
+                    <!--!================= Categorias =================-->
+        <!--!==============================================================-->
+        <main class="sidebar">
+            <h1 class="titulo">Preguntas frecuentes</h1>
+            <div class="categorias" id="categorias">
+                <div class="categoria activa" id="categoria" data-categoria="clave">
+                    <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.621 9.012c.247.959.379 1.964.379 3 0 6.623-5.377 11.988-12 11.988s-12-5.365-12-11.988c0-6.623 5.377-12 12-12 2.581 0 4.969.822 6.927 2.211l1.718-2.223 1.935 6.012h-6.58l1.703-2.204c-1.62-1.128-3.582-1.796-5.703-1.796-5.52 0-10 4.481-10 10 0 5.52 4.48 10 10 10 5.519 0 10-4.48 10-10 0-1.045-.161-2.053-.458-3h2.079zm-7.621 7.988h-8v-6h1v-2c0-1.656 1.344-3 3-3s3 1.344 3 3v2h1v6zm-5-8v2h2v-2c0-.552-.448-1-1-1s-1 .448-1 1z"/></svg>
+                    <p>Contraseña</p>
+                </div>
+                
+                <div class="categoria" id="categoria" data-categoria="ingresar">
+                    <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M13 2v-2l10 3v18l-10 3v-2h-9v-7h1v6h8v-18h-8v7h-1v-8h9zm-2.947 10l-3.293-3.293.707-.707 4.5 4.5-4.5 4.5-.707-.707 3.293-3.293h-9.053v-1h9.053z"/></svg>
+                    <p>Ingresar</p>
+                </div>
+                
+                <div class="categoria" id="categoria" data-categoria="gestionar">
+                    <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.5 15c-2.483 0-4.5 2.015-4.5 4.5s2.017 4.5 4.5 4.5 4.5-2.015 4.5-4.5-2.017-4.5-4.5-4.5zm2.5 5h-2v2h-1v-2h-2v-1h2v-2h1v2h2v1zm-7.18 4h-14.815l-.005-1.241c0-2.52.199-3.975 3.178-4.663 3.365-.777 6.688-1.473 5.09-4.418-4.733-8.729-1.35-13.678 3.732-13.678 6.751 0 7.506 7.595 3.64 13.679-1.292 2.031-2.64 3.63-2.64 5.821 0 1.747.696 3.331 1.82 4.5z"/></svg>
+                    <p>Gestionar</p>
+                </div>
+                
+                <div class="categoria" id="categoria" data-categoria="actualizar">
+                    <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23 12c0 1.042-.154 2.045-.425 3h-2.101c.335-.94.526-1.947.526-3 0-4.962-4.037-9-9-9-1.706 0-3.296.484-4.654 1.314l1.857 2.686h-6.994l2.152-7 1.85 2.673c1.683-1.049 3.658-1.673 5.789-1.673 6.074 0 11 4.925 11 11zm-6.354 7.692c-1.357.826-2.944 1.308-4.646 1.308-4.963 0-9-4.038-9-9 0-1.053.191-2.06.525-3h-2.1c-.271.955-.425 1.958-.425 3 0 6.075 4.925 11 11 11 2.127 0 4.099-.621 5.78-1.667l1.853 2.667 2.152-6.989h-6.994l1.855 2.681zm.354-10.283l-1.421-1.409-5.105 5.183-2.078-2.183-1.396 1.435 3.5 3.565 6.5-6.591z"/></svg>
+                    <p>Actualizar</p>
+                </div>
+                
+                <div class="categoria" id="categoria" data-categoria="consultar">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.111 20.058l-4.977-4.977c.965-1.52 1.523-3.322 1.523-5.251 0-5.42-4.409-9.83-9.829-9.83-5.42 0-9.828 4.41-9.828 9.83s4.408 9.83 9.829 9.83c1.834 0 3.552-.505 5.022-1.383l5.021 5.021c2.144 2.141 5.384-1.096 3.239-3.24zm-20.064-10.228c0-3.739 3.043-6.782 6.782-6.782s6.782 3.042 6.782 6.782-3.043 6.782-6.782 6.782-6.782-3.043-6.782-6.782zm2.01-1.764c1.984-4.599 8.664-4.066 9.922.749-2.534-2.974-6.993-3.294-9.922-.749z"/></svg>
+                    <p>Consultar</p>
+                </div>
+                
+                <div class="categoria" id="categoria" data-categoria="inactivar">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" ><path d="M20.822 18.096c-3.439-.794-6.641-1.49-5.09-4.418 4.719-8.912 1.251-13.678-3.732-13.678-5.082 0-8.465 4.949-3.732 13.678 1.598 2.945-1.725 3.641-5.09 4.418-2.979.688-3.178 2.143-3.178 4.663l.005 1.241h23.99l.005-1.241c0-2.52-.199-3.975-3.178-4.663zm-1.822 3.904h-5v-2h5v2z"/></svg>
+                    <p>Inactivar</p>
+                </div>
+                
+                <div class="categoria" id="categoria" data-categoria="opciones">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>
+                    <p>Más opciones</p>
+                </div>
+            </div>
+                <i class="boton boton-left fas fa-chevron-circle-left" id="btn-left"></i>
+                <i class="boton boton-right fas fa-chevron-circle-right" id="btn-right"></i>
+        </main>
 
-        <div class="resultados" id="resultados">
+        <!--!==============================================================-->
+                    <!--!================= Preguntas =================-->
+        <!--!==============================================================-->
+        <div class="preguntas">
+            <!--*=========================== Preguntas de contraseña ===========================-->
+            <div class="contenedor-preguntas activo" data-categoria="clave">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">Olvidé mi contraseña<img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores itaque cum consequuntur sed iste tempora distinctio hic eligendi vitae optio repudiandae nemo omnis veniam nobis, quo esse voluptatem inventore ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quasi consectetur ipsa quaerat voluptatum blanditiis voluptas quo neque a, delectus debitis velit, temporibus tempore architecto! Asperiores repellat veniam quae fugiat?</p>
+                </div>
+
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">No tengo la contraseña para ingresar<img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quibusdam mollitia ab omnis necessitatibus qui veritatis eligendi sapiente eos tenetur aperiam unde, expedita corrupti id? Beatae harum minima dicta dolorem!</p>
+                </div>
+            </div>
+
+            <!--*=========================== Preguntas de ingresar ===========================-->
+            <div class="contenedor-preguntas" data-categoria="ingresar">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">¿Cómo puedo ingresar?<img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus aut provident aspernatur atque! A illum placeat veniam recusandae aut? Architecto iure aliquid magnam earum delectus optio voluptatibus nobis ducimus.</p>
+                </div>
+
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">Lorem ipsum dolor sit amet consectetur. <img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, impedit iste itaque neque perspiciatis rem non quaerat fuga illum eveniet voluptate perferendis reprehenderit hic tempore harum ducimus repellendus ad quas!</p>
+                </div>
+            </div>
+
+            <!--*=========================== Preguntas de gestionar ===========================-->
+            <div class="contenedor-preguntas" data-categoria="gestionar">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi! <img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus aut provident aspernatur atque! A illum placeat veniam recusandae aut? Architecto iure aliquid magnam earum delectus optio voluptatibus nobis ducimus.</p>
+                </div>
+
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">Lorem ipsum dolor sit amet consectetur. <img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, impedit iste itaque neque perspiciatis rem non quaerat fuga illum eveniet voluptate perferendis reprehenderit hic tempore harum ducimus repellendus ad quas!</p>
+                </div>
+            </div>
+
+            <!--*=========================== Preguntas de actualizar ===========================-->
+            <div class="contenedor-preguntas" data-categoria="actualizar">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">Lorem ipsum dolor sit amet consectetur adipisicing. <img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus aut provident aspernatur atque! A illum placeat veniam recusandae aut? Architecto iure aliquid magnam earum delectus optio voluptatibus nobis ducimus.</p>
+                </div>
+
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">Lorem ipsum dolor sit amet consectetur. <img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, impedit iste itaque neque perspiciatis rem non quaerat fuga illum eveniet voluptate perferendis reprehenderit hic tempore harum ducimus repellendus ad quas!</p>
+                </div>
+            </div>
+
+            <!--*=========================== Preguntas de consultar ===========================-->
+            <div class="contenedor-preguntas" data-categoria="consultar">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">Lorem ipsum dolor sit amet consectetur adipisicing. <img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus aut provident aspernatur atque! A illum placeat veniam recusandae aut? Architecto iure aliquid magnam earum delectus optio voluptatibus nobis ducimus.</p>
+                </div>
+
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">Lorem ipsum dolor sit amet consectetur. <img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, impedit iste itaque neque perspiciatis rem non quaerat fuga illum eveniet voluptate perferendis reprehenderit hic tempore harum ducimus repellendus ad quas!</p>
+                </div>
+            </div>
+
+            <!--*=========================== Preguntas de inactivar ===========================-->
+            <div class="contenedor-preguntas" data-categoria="inactivar">
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">Lorem ipsum dolor sit amet consectetur adipisicing. <img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus aut provident aspernatur atque! A illum placeat veniam recusandae aut? Architecto iure aliquid magnam earum delectus optio voluptatibus nobis ducimus.</p>
+                </div>
+
+                <div class="contenedor-pregunta">
+                    <p class="pregunta">Lorem ipsum dolor sit amet consectetur. <img src="imagenes/ayuda/cruz.svg" alt="abrir respuesta"> <!-- <i class="fas fa-plus"></i> --></p>
+                    <p class="respuesta">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, impedit iste itaque neque perspiciatis rem non quaerat fuga illum eveniet voluptate perferendis reprehenderit hic tempore harum ducimus repellendus ad quas!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="resultados" id="resultados">
             <div class="original" id="original">
                 <h1>Preguntas y situaciones frecuentes</h1>
                 <p>En esta página se encuentra las soluciones a los problemas que surgen comúnmente, esto lo hacemos para que cualquier dificultad o pregunta que tenga pueda ser consultada por usted o por otra persona en el menor tiempo posible.</p>
@@ -75,12 +195,13 @@
                 <p>Voluptas sunt sequi itaque. Odit, atque? Ipsa illo suscipit officia quae mollitia rerum nam culpa soluta nostrum corrupti. Distinctio et iure enim facere modi amet asperiores. Praesentium possimus sint natus.</p>
                 <p>Ducimus modi nisi, officiis nemo iste reiciendis! Magni neque libero dolor accusamus at illum cum quo deserunt enim, itaque modi vitae. Facilis delectus dolore consectetur inventore optio nesciunt libero accusamus!</p>
             </div>
-        </div>
+        </div> -->
 
         <footer class="footer">
             <p>Todos los derechos reservados al Colegio Rafael Uribe Uribe | Copyright ©</p>
         </footer>
     </div>
     <script src="js/ayuda.js"></script>
+    <script src="js/sweetalert2.js"></script>
 </body>
 </html>

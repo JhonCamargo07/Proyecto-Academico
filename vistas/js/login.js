@@ -68,6 +68,10 @@
 
     login.addEventListener("submit", validar);
 
+    //*------------------------------------------------------------
+    //!--------------------------- Icono de mostrar contraseña ---------------------------
+    //*------------------------------------------------------------
+
     var icono = document.getElementById('icono');
     
     var mostrarContraseña = function(){

@@ -12,6 +12,7 @@
     display: grid;
     align-items: center;
     grid-template-columns: 15% 81%;
+    justify-content: center;
     background: var(--color-navegador);
 }
 
@@ -71,14 +72,15 @@
     padding-top: 5px;
 }
 
-@media (max-width: 768px){
+@media (max-width: 1164px){
     .navegador{
         display: grid;
-        grid-template-columns: 80% minmax(25%, 30%);
+        grid-template-columns: 75%  minmax(25%, 30%);
     }
 
     .navegador label{
-        display: block;
+        display: flex;
+        justify-content: flex-end;
     }
 
     .menu{
