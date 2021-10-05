@@ -46,6 +46,10 @@
     text-decoration: none;
 }
 
+.botones{
+    font-weight: bold;
+}
+
 .menu a:hover,
 .menu a:focus,
 .menu a:active{
@@ -61,11 +65,6 @@
     margin: 10px;
     padding: 20px;
     text-align: justify;
-}
-
-.nombreingresado{
-    padding-left: 15px;
-    display: inline-block;
 }
 
 .contenido p{
@@ -113,5 +112,9 @@
 
     #btn-menu:checked ~ .menu{
         transform: translateX(0%);
+    }
+
+    .nombreingresado{
+        padding-left: 15px;
     }
 }

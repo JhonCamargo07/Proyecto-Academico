@@ -1,9 +1,7 @@
 <?php
-    session_start();
-    if(empty($_SESSION['usuario'])){
-        header("location:login.php");
-        exit();
-    }
+    require_once('../modelos/login.php');
+    $modeloLogin = new Login();
+    $modeloLogin->validarSesion();
 ?>
 <html lang="es">
 <head>

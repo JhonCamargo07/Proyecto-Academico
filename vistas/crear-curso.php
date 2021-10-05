@@ -1,9 +1,7 @@
 <?php
-    session_start();
-    if(empty($_SESSION['usuario'])){
-        header("location:login.php");
-        exit();
-    }
+    require_once('../modelos/login.php');
+    $modeloLogin = new Login();
+    $modeloLogin->validarSesion();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -56,7 +54,7 @@
                 </div>
 
                 <div class="inputs">
-                    <input type="text" name="nombres-estudiante" id="nombres-estudiante" placeholder="Nombres del estudiante" title="Solo los nombres del estudiante." class="recolectores" required>
+                    <input type="text" name="nombres-curso" id="nombres-curso" placeholder="Nombre del curso" title="Nombre del curso" class="recolectores" required>
                 </div>
 
                 <div class="inputs">

@@ -15,16 +15,30 @@
             imageUrl: 'imagenes/error.gif',
             imageWidth: 135,
             imageHeight: 135,
+            timer: 6090,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+            },
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
                 },
                 hideClass: {
                 popup: 'animate__animated animate__fadeOutUp'
-                }
+                },
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false,
+            stopKeydownPropagation: false,
+        }).then((result)=>{
+            if(result.isConfirmed){
+                location.href ="contacto.php";
+            }
         });
         setTimeout( ()=>{
             location.href = "contacto.php";
-        }, 5000);
+        }, 6100);
     });
 
     const btnLeft = document.querySelector('#btn-left');
@@ -131,12 +145,7 @@
                     elemento.querySelector('.respuesta').style.maxHeight = null;
                 }
             });
-
-
-
-
         });
     });
-
 
 }())

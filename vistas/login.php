@@ -25,17 +25,17 @@
 
             <div class="centro">
                 
-                <form action="login.php" name="login" method="POST">
+                <form action="../controladores/login.php" name="login" method="POST">
                 
                     <div class="inputs">
                         <label for="usuario"></label>
-                        <input type="text" name="usuario" class="recolectores" id="usuario" placeholder="Nombre de usuario">
+                        <input type="text" name="usuario" class="recolectores" id="usuario" placeholder="Nombre de usuario" autofocus>
                         <div><p class="mensaje__input-error" id="mensaje-error">El usuario es obligatorio</p></div>
                     </div>
 
                     <div class="inputs">
                         <label for="contraseña"></label>
-                        <input type="password" name="contraseña" class="recolectores" id="contraseña" placeholder="Contraseña">
+                        <input type="password" name="password" class="recolectores" id="contraseña" placeholder="Contraseña">
                         <span class="icon-eye-blocked eye" id="icono"></span>
                         <div><p class="mensaje__input-error" id="mensaje-error2">La contraseña es obligatoria</p></div>
                     </div>
@@ -46,10 +46,6 @@
 
                 </form>
                 <center class="center"><a href="ayuda.html" class="link">¿Olvidaste tu contraseña?</a></center>
-
-                <?php
-                    include("validar.php");
-                ?>
 
             </div>
 

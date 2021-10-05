@@ -1,9 +1,7 @@
 <?php
-    session_start();
-    if(empty($_SESSION['usuario'])){
-        header("location:login.php");
-        exit();
-    }
+    require_once('../modelos/login.php');
+    $modeloLogin = new Login();
+    $modeloLogin->validarSesion();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -56,7 +54,7 @@
                 
                 </div>
                 
-                <div class="inputs">
+                <!-- <div class="inputs">
                 
                     <input type="text" name="apellidos-profesor" id="apellidos-profesor" placeholder="Apellidos del profesor" title="Solo los apellidos del profesor." class="recolectores" required>
                 
@@ -72,14 +70,20 @@
                 
                     <input type="number" name="especialidad-profesor" id="especialidad-profesor" placeholder="Especialidad del profesor"class="recolectores" required>
                 
+                </div> -->
+
+                <div class="inputs">
+                    <select name="estadoMatricula" id="EstadoMatricula" class="recolectores" required>
+                        <option value="">Estado de la matricula</option>
+                        <option value="activoProfesor">Activa</option>
+                        <option value="inactivoProfesor">Inactiva</option>
+                    </select>
                 </div>
 
                 <div class="inputs">
-                    <select name="estadoProfesor" id="EstadoProfesor" class="recolectores" required>
-                        <option value="">Estado del Profesor</option>
-                        <option value="activoProfesor">Activo</option>
-                        <option value="inactivoProfesor">Inactivo</option>
-                    </select>
+                
+                    <input type="number" name="id_usuario" id="id_usuario" placeholder="Identificacion del estudiante"class="recolectores" required>
+                
                 </div>
                 
                 <div class="inputs">

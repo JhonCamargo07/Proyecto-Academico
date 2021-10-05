@@ -3,14 +3,14 @@
         $usuarioWeb = $_POST['usuario'];
         $contraseñaWeb = $_POST['contraseña'];
 
-        if($usuarioWeb == "" || $contraseñaWeb == ""){
-            echo "<p class='parrafo__php'>Debes rellenas todos los compos solicitados<p>";
-        }else{
-            include('../modelos/login.php');
-            $ingreso = new ingresar();
-            $meterDatos = $ingreso->setDatos($usuarioWeb, $contraseñaWeb);
-            $datos = $ingreso->getIngreso();
-        }
+        // if($usuarioWeb == "" || $contraseñaWeb == ""){
+        //     echo "<p class='parrafo__php'>Debes rellenas todos los compos solicitados<p>";
+        // }else{
+        //     include('../modelos/login.php');
+        //     $ingreso = new ingresar();
+        //     $meterDatos = $ingreso->setDatos($usuarioWeb, $contraseñaWeb);
+        //     $datos = $ingreso->getIngreso();
+        // }
 
         // $host = "localhost";
         // $basededatos = "proyecto_academico"; 

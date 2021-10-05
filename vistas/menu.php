@@ -1,8 +1,15 @@
 <?php
-    session_start();
-    if(empty($_SESSION['usuario'])){
-        header("location:login.php");
-        exit();
+    require_once('../modelos/login.php');
+    $modeloLogin = new Login();
+    $modeloLogin->validarSesion();
+
+    $mensaje = "";
+    if($_SESSION['Sexo'] == 1){
+        $mensaje = "Bienvenido " . $_SESSION['Nombre'];
+    }elseif($_SESSION['Sexo'] == 2){
+        $mensaje = "Bienvenida " . $_SESSION['Nombre'];    
+    }else{
+        $mensaje = "Bienvenid@ " . $_SESSION['Nombre'];
     }
 ?>
 <!DOCTYPE html>
@@ -18,6 +25,8 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="shortcut icon" href="imagenes/escudo.jpg">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>Menú | Colegio Rafael Uribe Uribe IED</title>
 </head>
 <body>
@@ -33,11 +42,8 @@
             <div class="navegador">
 
                 <section>
-                    <p class="nombreingresado">Bienvenido(a) 
-                        <?php
-                            $usuario = $_SESSION['usuario'];
-                            echo "$usuario";
-                        ?>
+                    <p class="nombreingresado">
+                        <?php echo "$mensaje"; ?>
                     </p>
                 </section>
 
@@ -89,7 +95,7 @@
                         </li>
 
                         <li>
-                            <a href="logout.php" class="botones"><span class="icon-exit"></span>Cerrar Sesión</a>
+                            <a href="../controladores/logout.php" class="botones"><span class="icon-exit"></span>Cerrar Sesión</a>
                         </li>
 
                     </ul>
@@ -98,19 +104,20 @@
             </div>
 
         <div class="contenido">
+            <h2 class="subtitulo">Algunas instrucciones</h2><br>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dolore tempora quia ea inventore similique aut! Aspernatur accusamus beatae perferendis pariatur cum quo eveniet doloremque, vitae, nulla, expedita rerum saepe!
+                Esta es la página principal, desde aquí puede dirigirse al resto de opciones que tiene permitidos. Cualquier problema que tenga puede mirar si en la página de ayuda lo logra solucionar, de no ser así puede dirigirse a la página de contacto para que el encargado de hacer todas las gestiones le ayude a solucionar el dilema que presenta.
+            </p><br>
+            <p>
+                En el menú que está arriba puede selecionar la opción que necesite, dependiendo de cual escoja será llevado a una página en donde pueda realizar la accion escogida.
+            </p><br>
+            <p>
+                Su sesión permanecerá activa siempre y cuando no salga de ella, por tal motivo no la deje abierta en cualquier lado (computador o celular ajeno, cafe internet, o en cualquier otro dispositivo perteneciente a un tercero), si por algun motivo sucede lo anterior, debe tratar de cambiar su contraseña lo más pronto posible para que la persona que tenga acceso no pueda hacer ningun cambio.
+            </p><br>
+            <p>
+                Todas las acciones que realice serán guardadas en la base de datos, y se sabrá que usuario modificó o hizo un cambio en la base de datos, esto para garantizar la seguridad de los datos que se encuentren registrados.
             </p>
-            <p>
-                Dolore consequuntur esse eos voluptatum non sequi repellendus, earum facilis expedita eligendi laborum unde repudiandae eum distinctio, quidem quas officiis optio? Distinctio, obcaecati voluptates. Repellat nemo fuga ex repudiandae dolore?
-            </p>
-            <p>
-                Sapiente, tempora natus incidunt magni odit magnam mollitia eum obcaecati harum fugit quos nulla accusantium at nesciunt cumque dolor dolorum quod? Dignissimos placeat consequatur, aut repellendus vel ipsum. Consequuntur, sit?
-            </p>
-            <p>
-                Mollitia inventore odit cum nemo tempora assumenda ipsam tempore asperiores unde neque est quo dolorum, saepe quod rem! Corrupti excepturi ab, mollitia quibusdam pariatur quos expedita facere inventore laudantium enim!
-            </p>
-            <p>
+            <!--<p>
                 Laboriosam, labore. Voluptates voluptas repudiandae incidunt deserunt sed! Ullam distinctio magni, quas praesentium quod sed aliquid repudiandae deleniti veniam ea exercitationem rerum iure voluptates nihil doloribus velit quaerat quibusdam numquam.
             </p>
             <p>
@@ -121,7 +128,7 @@
             </p>
             <p>
                 Dolor, ut culpa sint cum repellendus tempora aspernatur natus animi asperiores cupiditate id iure recusandae, voluptates deserunt dicta molestias, quisquam perferendis quasi sed illum doloribus? Quisquam temporibus fugit velit. Eius.
-            </p>
+            </p> -->
 
         </div>
 

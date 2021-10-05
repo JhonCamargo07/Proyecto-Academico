@@ -1,9 +1,9 @@
 (function(){
     var login = document.getElementsByName('login')[0],
         elementos = login.elements,
-        contraseña = document.getElementById('contraseña'),
+        password = document.getElementById('contraseña'),
         usuario = login.usuario,
-        campoContraseña = login.contraseña,
+        campoPassword = login.contraseña,
         mensajeError = document.getElementById('mensaje-error'),    //Mensaje de error en usuario
         mensajeError2 = document.getElementById('mensaje-error2');  //Mensaje de error en contraseña
 
@@ -15,6 +15,10 @@
             imageUrl: 'imagenes/error.gif',
             imageWidth: 135,
             imageHeight: 135,
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            allowEnterKey: false,
+            stopKeydownPropagation: false,
             showClass: {
                 popup: 'animate__animated animate__fadeInDown'
                 },
@@ -43,26 +47,26 @@
         }
     };
 
-    var validarContraseña = function(e){
-        if(campoContraseña.value == 0){
+    var validarPassword = function(e){
+        if(campoPassword.value == 0){
             alertaError();
-            campoContraseña.classList.add("error");
-            campoContraseña.setAttribute("placeholder", "Escribe tu contraseña aquí");
+            campoPassword.classList.add("error");
+            campoPassword.setAttribute("placeholder", "Escribe tu contraseña aquí");
             mensajeError2.style.display="block";
 
-            var comprobarContraseña = function(){
-                campoContraseña.classList.remove("error");
-                campoContraseña.setAttribute("placeholder", "Contraseña");
+            var comprobarPassword = function(){
+                campoPassword.classList.remove("error");
+                campoPassword.setAttribute("placeholder", "Contraseña");
                 mensajeError2.style.display="none";
             };
 
-            campoContraseña.addEventListener("keydown", comprobarContraseña);
+            campoPassword.addEventListener("keydown", comprobarPassword);
             e.preventDefault();
         }
     };
 
     var validar = function(e){
-        validarContraseña(e);
+        validarPassword(e);
         validarUsuario(e);
     };
 
@@ -74,18 +78,18 @@
 
     var icono = document.getElementById('icono');
     
-    var mostrarContraseña = function(){
-        if(contraseña.type == "password"){
+    var mostrarClave = function(){
+        if(password.type == "password"){
             icono.classList.add('icon-eye');
             icono.classList.remove('icon-eye-blocked');
-            contraseña.type = "text";
+            password.type = "text";
         }else{
             icono.classList.add('icon-eye-blocked');
             icono.classList.remove('icon-eye');
-            contraseña.type = "password";
+            password.type = "password";
         }
     };
 
-    icono.addEventListener("click", mostrarContraseña);
+    icono.addEventListener("click", mostrarClave);
 
 }())

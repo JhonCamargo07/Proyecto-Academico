@@ -49,6 +49,8 @@ header h1{
     min-height: calc(100vh - 120px - 155px);
 }
 
+.subtitulo{text-align: center;}
+
 nav a.activo,
 nav a:hover{
     color: white;
