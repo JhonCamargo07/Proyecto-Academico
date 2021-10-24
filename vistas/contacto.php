@@ -73,5 +73,7 @@
         </footer>
 
     </div>
+
+    <script src="js/configuraciones.js"></script>
 </body>
 </html>

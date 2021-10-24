@@ -21,10 +21,7 @@
 <body>
     <div class="contenedor">
         
-        <header>
-            <img src="imagenes/simbolos.png" loading="lazy" alt="Escudo y bandera del colegio Rafael Uribe Uribe">
-            <h1>Colegio Rafael Uribe Uribe</h1>
-        </header>
+        <?php include('header.php'); ?>
 
         <nav>
             <label for="btn-menu" class="icon-view-list"></label>
@@ -48,34 +45,39 @@
         </nav>
 
         <div class="contenido">
-            <form action="actualizar-usuario.php" method="POST">
+            <form action="../controladores/actualizarUsuario.php" method="POST">
 
                 <h1>Actualizar Usuario</h1>
 
-                <div class="inputs">
-
-                    <label for="id">Número de identificación:</label><br>
-                    <input type="number" name="id" id="id" placeholder="Número de identificacion "class="recolectores" required>
-
+                <div class="inputs"> 
+                    <b><label for="rol">Rol del usuario:</label></b><br>
+                    <select name="rol" id="rol" class="recolectores" required>
+                        <option value="">Selecionar opción</option>
+                        <option value="1">Estudiante</option>
+                        <option value="2">Profesor</option>
+                        <option value="3">Administrador</option>
+                    </select>
                 </div>
 
                 <div class="inputs">
+                    <b><label for="documento">Número de identificación:</label></b><br>
+                    <input type="number" name="documento" id="documento" placeholder="Número de identificacion" class="recolectores" required>
+                </div>
 
+                <div class="inputs">
                     <center>
-                        <input type="reset" value="Limpiar" class="boton secundario">
+                        <input type="submit" value="Limpiar" class="boton secundario" onclick="window.location='actualizar-usuario.php'">
                         <input type="submit" value="Consultar"  class="boton primario">
                     </center>
-
                 </div>
 
             </form>
-
         </div>
 
-        <footer class="footer-actualizar">
-            <p>Todos los derechos reservados al Colegio Rafael Uribe Uribe | Copyright ©</p>
-        </footer>
+        <?php include('footer.php'); ?>
 
     </div>
+    
+    <script src="js/configuraciones.js"></script>
 </body>
 </html>

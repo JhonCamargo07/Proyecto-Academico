@@ -76,5 +76,17 @@
                 alertaBienvenida();
             }  
         }
+/* 
+        //!==============================================================
+        //!=========================== salir =============================
+        //!==============================================================
+
+        var salir = document.getElementById('salir');
+
+        var redirecionarAlArchivoSalir = () => {
+            location.href = 'http://localhost/proyectoacademico/controladores/logout.php';
+        };
+
+        salir.addEventListener('click', redirecionarAlArchivoSalir); */
 
 }())

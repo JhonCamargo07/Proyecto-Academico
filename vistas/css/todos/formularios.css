@@ -89,6 +89,11 @@ input{
     border-radius: 3px;
 }
 
+.recolectores.formulario{
+    height: 30px;
+    line-height: 30px;
+}
+
 .recolectores:focus,
 .textarea:focus{
     outline: none;
@@ -103,37 +108,32 @@ input{
     height: 150px;
 }
 
-.secundario{
-    background: var(--fondo-pagina);
-}
-
-.secundario:hover{
-    background: var(--boton-secundario);
-}
-
-.primario{
-    background: linear-gradient(180deg, transparent 0%, transparent 49%, var(--fondo-pagina)50%, var(--fondo-pagina) 100%);
-    background-size: 1px 100px;
-    transition: all .3s;
-}
-
-.primario:hover{
-    transition: all .3s;
-    background-position: 0px -50px;
-}
-
 .boton{
-    min-height: 38px;
-    margin: 4px 2px;
+    min-height: 2.375rem;
+    /* line-height: 2.375rem; */
     min-width: 90px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 4px 2px;
     padding: 6px 12px;
     border-radius: 3px;
+    background: var(--boton-secundario);
     border: 1px solid var(--fondo-pagina);
+    transition: .3s ease all;
 }
 
 .boton:hover{ 
-    cursor: pointer;
     filter: saturate(130%);
+    box-shadow: 1px 1px 5px 0px var(--shadow);
+}
+
+.primario{
+    background: linear-gradient(180deg, transparent 0%, transparent 49%, var(--boton-secundario)50%, var(--boton-secundario) 100%);
+    background-size: 1px 100px;
+}
+
+.primario:hover{
+    background-position: 0px -50px;
 }
 
 footer{

@@ -11,7 +11,7 @@
     margin-top: 10px;
     display: grid;
     align-items: center;
-    grid-template-columns: 15% 81%;
+    grid-template-columns: 17% 81%;
     justify-content: center;
     background: var(--color-navegador);
 }
@@ -30,7 +30,7 @@
 .menu ul{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     list-style: none;
     background: var(--color-navegador);

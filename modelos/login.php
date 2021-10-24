@@ -15,7 +15,7 @@
 
         // Función para consultar el usuario en la base de datos
         public function login($usuario, $password){
-            $str = $this->pdo->prepare("SELECT * FROM usuario WHERE BINARY Usuario = :UserU /* AND BINARY PasswordU = :PasswordU */");
+            $str = $this->pdo->prepare("SELECT * FROM Usuario WHERE BINARY Usuario = :UserU /* AND BINARY PasswordU = :PasswordU */");
             $str->bindParam(':UserU', $usuario);
             // $str->bindParam(':PasswordU', $password);
             $str->execute();

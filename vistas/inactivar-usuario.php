@@ -21,10 +21,7 @@
 <body>
     <div class="contenedor">
         
-        <header>
-            <img src="imagenes/simbolos.png" loading="lazy" alt="Escudo y bandera del colegio Rafael Uribe Uribe">
-            <h1>Colegio Rafael Uribe Uribe</h1>
-        </header>
+        <?php include('header.php'); ?>
 
         <nav>
             <label for="btn-menu" class="icon-view-list"></label>
@@ -48,15 +45,13 @@
         </nav>
 
         <div class="contenido">
-            <form action="consultarusuario.php" method="POST">
+            <form action="../controladores/InactivarEstudiante.php" method="POST">
 
                 <h1>Inactivar Usuario</h1>
 
                 <div class="inputs">
-
-                    <label for="id">Número de identificación:</label><br>
-                    <input type="number" name="id" id="id" placeholder="Número de identificacion "class="recolectores" required>
-                    
+                    <b><label for="documento-estudiante">Número de identificación:</label></b><br>
+                    <input type="number" name="documento-estudiante" id="documento-estudiante" placeholder="Número de identificacion "class="recolectores" required>
                 </div>
 
                 <div class="inputs">
@@ -71,10 +66,10 @@
             </form>
         </div>
 
-        <footer>
-            <p>Todos los derechos reservados al Colegio Rafael Uribe Uribe | Copyright ©</p>
-        </footer>
+        <?php include('footer.php'); ?>
 
     </div>
+
+    <script src="js/configuraciones.js"></script>
 </body>
 </html>

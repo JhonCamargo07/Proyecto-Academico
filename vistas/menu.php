@@ -15,35 +15,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <title>Menú | Colegio Rafael Uribe Uribe IED</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0" user-scalable=no />
     <meta name="author" content="Jhon Camargo">
     <meta name="description" content="Menu del Colegio Rafael Uribe Uribe (IED) Localidad 19 Bogotá - Ciudad Bolívar.">
     <meta name="keywords" content="Colegio Rafael Uribe Uribe, Colegio, Educacion, Rafael Uribe, Colegios ciudad Bolívar">
+    <link rel="shortcut icon" href="imagenes/escudo.jpg">
     <link rel="stylesheet" href="css/todos/index.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="shortcut icon" href="imagenes/escudo.jpg">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <title>Menú | Colegio Rafael Uribe Uribe IED</title>
 </head>
 <body>
     <div class="contenedor">
 
-        <header>
-
-                <img src="imagenes/simbolos.png" loading="lazy" alt="Escudo y bandera del colegio Rafael Uribe Uribe">
-                <h1>Colegio Rafael Uribe Uribe</h1>
-
-        </header>
+        <?php include('header.php'); ?>
 
             <div class="navegador">
 
                 <section>
                     <p class="nombreingresado">
-                        <?php echo "$mensaje"; ?>
+                        <?php echo "<strong>$mensaje</strong>"; ?>
                     </p>
                 </section>
 
@@ -54,9 +49,9 @@
                     
                     <ul>
 
-                        <li>
+                        <!-- <li>
                             <a href="../index.html" class="botones"><span class="icon-home"></span>Ininio</a>
-                        </li>
+                        </li> -->
 
                         <li class="submenu inactivo" id="padreBoton1">
                             <a id="gestiones" class="botones"><span class="icon-users"></span>Gestionar Usuarios
@@ -117,28 +112,15 @@
             <p>
                 Todas las acciones que realice serán guardadas en la base de datos, y se sabrá que usuario modificó o hizo un cambio en la base de datos, esto para garantizar la seguridad de los datos que se encuentren registrados.
             </p>
-            <!--<p>
-                Laboriosam, labore. Voluptates voluptas repudiandae incidunt deserunt sed! Ullam distinctio magni, quas praesentium quod sed aliquid repudiandae deleniti veniam ea exercitationem rerum iure voluptates nihil doloribus velit quaerat quibusdam numquam.
-            </p>
-            <p>
-                Pariatur, laborum! Accusamus nisi corrupti earum ipsam repellat est maxime similique pariatur officia maiores ex labore consequuntur quidem fuga, deserunt illum blanditiis eveniet! Minus veritatis, omnis atque libero qui non.
-            </p>
-            <p>
-                Ipsam illo dolore aut minima laboriosam quidem quam, vel minus dolor sapiente enim voluptatem facilis harum aliquam placeat voluptate nostrum saepe ipsa consequatur tenetur! Necessitatibus maiores tempora magni voluptate nemo?
-            </p>
-            <p>
-                Dolor, ut culpa sint cum repellendus tempora aspernatur natus animi asperiores cupiditate id iure recusandae, voluptates deserunt dicta molestias, quisquam perferendis quasi sed illum doloribus? Quisquam temporibus fugit velit. Eius.
-            </p> -->
 
         </div>
 
-        <footer>
-            <p>Todos los derechos reservados al Colegio Rafael Uribe Uribe | Copyright ©</p>
-        </footer>
+        <?php include('footer.php'); ?>
 
     </div>
 
     <script src="js/jquery.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/configuraciones.js"></script>
 </body>
 </html>

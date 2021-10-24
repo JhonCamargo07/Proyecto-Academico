@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <title>Iniciar sesión | Colegio Rafael Uribe Uribe IED</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0" user-scalable=no />
@@ -12,7 +13,6 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="shortcut icon" href="imagenes/escudo.jpg">
     <script src="js/sweetalert2.js"></script>
-    <title>Iniciar sesión | Colegio Rafael Uribe Uribe IED</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
@@ -25,7 +25,7 @@
 
             <div class="centro">
                 
-                <form action="../controladores/login.php" name="login" method="POST">
+                <form action="login.php" name="login" method="POST">
                 
                     <div class="inputs">
                         <label for="usuario"></label>
@@ -47,9 +47,12 @@
                 </form>
                 <center class="center"><a href="ayuda.html" class="link">¿Olvidaste tu contraseña?</a></center>
 
+                <?php require('../controladores/login.php'); ?>
             </div>
 
         </div> 
+
+        <a href="../" class="boton" title="Volver"><span class="icon-undo"></span></a>
 
         <footer class="footer-login">
             <p>Todos los derechos reservados al Colegio Rafael Uribe Uribe | Copyright ©</p>
@@ -58,5 +61,6 @@
     </div>
     
     <script src="js/login.js"></script>
+    <script src="js/configuraciones.js"></script>
 </body>
 </html>
