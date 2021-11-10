@@ -15,5 +15,3 @@ function mostrar(id){
         $("#administrador").show();
     }
 }
-
-

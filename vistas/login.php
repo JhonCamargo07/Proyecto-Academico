@@ -25,17 +25,19 @@
 
             <div class="centro">
                 
-                <form action="login.php" name="login" method="POST">
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" name="login" method="POST">
+
+                <?php require('../controladores/login.php'); ?>
                 
                     <div class="inputs">
                         <label for="usuario"></label>
-                        <input type="text" name="usuario" class="recolectores" id="usuario" placeholder="Nombre de usuario" autofocus>
+                        <input type="text" name="usuario" class="recolectores" id="usuario" value="<?php if(isset($usuario)){echo $usuario;} ?>" placeholder="Nombre de usuario" autofocus pattern="[a-zA-ZÁ-ÿá-ÿ ]{3,30}">
                         <div><p class="mensaje__input-error" id="mensaje-error">El usuario es obligatorio</p></div>
                     </div>
 
                     <div class="inputs">
                         <label for="contraseña"></label>
-                        <input type="password" name="password" class="recolectores" id="contraseña" placeholder="Contraseña">
+                        <input type="password" name="password" class="recolectores" id="contraseña" value="<?php if(isset($password)){echo $password;} ?>" placeholder="Contraseña" pattern="[a-zA-ZÁ-ÿá-ÿ ]{3,30}">
                         <span class="icon-eye-blocked eye" id="icono"></span>
                         <div><p class="mensaje__input-error" id="mensaje-error2">La contraseña es obligatoria</p></div>
                     </div>
@@ -47,7 +49,7 @@
                 </form>
                 <center class="center"><a href="ayuda.html" class="link">¿Olvidaste tu contraseña?</a></center>
 
-                <?php require('../controladores/login.php'); ?>
+                
             </div>
 
         </div> 
@@ -55,7 +57,13 @@
         <a href="../" class="boton" title="Volver"><span class="icon-undo"></span></a>
 
         <footer class="footer-login">
-            <p>Todos los derechos reservados al Colegio Rafael Uribe Uribe | Copyright ©</p>
+            <div>
+                <h4>Contacto:</h4>
+                <p><b>Teléfono:</b> 601 7912395 / 601 7903666</p>
+                <p><b>Direción:</b> DG 71 B SUR # 18 i - 20 (Ciudad Bolivar)</p>
+                <p><b>Correo electrónico:</b> escdirafaeluribeur19@educacionbogota.edu.co</p>
+            </div>
+            <p class="mensaje__copyright"><b>Todos los derechos reservados al Colegio Rafael Uribe Uribe | Copyright ©</b></p>
         </footer>
 
     </div>

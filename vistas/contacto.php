@@ -31,7 +31,7 @@
 
             <div class="menu">
                 <ul>
-                    <li><a href="../index.html" class="botones"><span class="icon-home"></span>Inicio</a></li>
+                    <li><a href="../" class="botones"><span class="icon-home"></span>Inicio</a></li>
                     <li><a href="login.php" class="botones"><span class="icon-enter"></span>Ingresar</a></li>
                     <li><a href="contacto.php" class="botones activo"><span class="icon-phone"></span>Contacto</a></li>
                     <li><a href="ayuda.html" class="botones"><span class="icon-question-circle pregunta"></span>Ayuda</a></li>
@@ -45,19 +45,19 @@
             <form action="contacto.php" method="POST" class="contenido">
                 <div class="inputs">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" class="recolectores" placeholder="Nombre" id="nombre">
+                    <input type="text" class="recolectores" placeholder="Nombre" id="nombre" required>
                 </div>
                 <div class="inputs">
                     <label for="email">Correo:</label>
-                    <input type="email" class="recolectores" placeholder="correo@correo.com" id="email">
+                    <input type="email" class="recolectores" placeholder="correo@correo.com" id="email" required>
                 </div>
                 <div class="inputs">
                     <label for="asunto">Asunto:</label>
-                    <input type="text" class="recolectores" placeholder="Asunto" id="asunto">
+                    <input type="text" class="recolectores" placeholder="Asunto" id="asunto" required>
                 </div>
                 <div class="inputs">
                     <label for="mensaje">Mensaje:</label>
-                    <textarea name="mensaje" id="mensaje" class="textarea" rows="10" placeholder="Mensaje:"></textarea>
+                    <textarea name="mensaje" id="mensaje" class="textarea" rows="10" placeholder="Mensaje:" required></textarea>
                 </div>
                 <div class="inputs">
                     <center>
@@ -68,9 +68,7 @@
             </form>
         </main>
 
-        <footer class="footer">
-            <p>Todos los derechos reservados al Colegio Rafael Uribe Uribe | Copyright ©</p>
-        </footer>
+        <?php include('admin/footer.php'); ?>
 
     </div>
 

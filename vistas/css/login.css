@@ -7,8 +7,6 @@
     --input: rgba(0, 0, 0, .3);
 }
 
-*,::after,::before{overflow-x: visible;}
-
 body{
     background: var(--fondo-pagina);
 }
@@ -62,11 +60,6 @@ input{
 
 .recolectores:focus{
     border: 2px solid var(--background-pagina);
-}
-
-.eye{
-    margin-left:-35px;
-    cursor: pointer;
 }
 
 .ingresar{

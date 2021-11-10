@@ -51,6 +51,10 @@ header h1{
 
 .subtitulo{text-align: center;}
 
+nav{
+    font-weight: bold;
+}
+
 nav a.activo,
 nav a:hover{
     color: white;
@@ -61,13 +65,28 @@ a{cursor: pointer}
 
 p{line-height: 23px}
 
+.eye{
+    margin-left:-35px;
+    cursor: pointer;
+}
+
 footer{
     bottom: 0;
     padding: 32px 16px;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     min-height: 114px;
     background: var(--fondo-pagina);
+}
+
+
+@media screen and (max-width: 800px){
+    footer{
+        display: block !important;
+    }
+    .mensaje__copyright{
+        margin-top: 30px;
+    }
 }

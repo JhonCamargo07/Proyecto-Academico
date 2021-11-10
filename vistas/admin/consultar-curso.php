@@ -1,7 +1,8 @@
 <?php
-    require_once('../modelos/login.php');
+    require_once('../../modelos/login.php');
     $modeloLogin = new Login();
     $modeloLogin->validarSesion();
+    $modeloLogin->validarRolAdmin();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,13 +11,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0" user-scalable=no />
     <meta name="author" content="Jhon Camargo">
-    <meta name="description" content="Consultar matriculas en el Colegio Rafael Uribe Uribe (IED) Localidad 19 Bogotá - Ciudad Bolívar.">
-    <meta name="keywords" content="Colegio Rafael Uribe Uribe, Colegio, Educacion, Rafael Uribe, Colegios ciudad Bolívar">
-    <link rel="stylesheet" href="css/todos/index.css">
-    <link rel="stylesheet" href="css/todos/formularios.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <link rel="shortcut icon" href="imagenes/escudo.jpg">
-    <title>Consultar Matricula | Colegio Rafael Uribe Uribe IED</title>
+    <meta name="description" content="Consultar curso en la plataforma de el Colegio Rafael Uribe Uribe (IED) Localidad 19 Bogotá - Ciudad Bolívar.">
+    <meta name="keywords" content="Colegio Rafael Uribe Uribe, Colegio, Educacion, Rafael Uribe, Colegios ciudad Bolívar, consultar">
+    <link rel="stylesheet" href="../css/todos/index.css">
+    <link rel="stylesheet" href="../css/todos/formularios.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="shortcut icon" href="../imagenes/escudo.jpg">
+    <title>Consultar Curso | Colegio Rafael Uribe Uribe IED</title>
 </head>
 <body>
 
@@ -31,18 +32,18 @@
 
             <div class="menu">
                 <ul>
-                    <li><a href="menu.php" class="botones"><span class="icon-undo"></span>Volver</a></li>
-                    <li><a href="crear-matricula.php" class="botones"><span class="icon-file-text"></span>Crear Matricula</a></li>
-                    <li><a href="actualizar-matricula.php" class="botones"><span class="icon-spinner11"></span>Actualizar Matricula</a></li>
-                    <li><a class="botones activo"><span class="icon-search"></span>Consultar Matricula</a></li>
-                    <li><a href="inactivar-matricula.php" class="botones"><span class="icon-blocked"></span>Inactivar Matricula</a></li>
+                    <li><a href="../" class="botones"><span class="icon-undo"></span>Volver</a></li>
+                    <li><a href="crear-curso.php" class="botones"><span class="icon-folder-plus"></span>Crear Curso</a></li>
+                    <li><a href="actualizar-curso.php" class="botones"><span class="icon-spinner11"></span>Actualizar Curso</a></li>
+                    <li><a href="#" class="botones activo"><span class="icon-search"></span>Consultar Curso</a></li>
+                    <li><a href="inactivar-curso.php" class="botones"><span class="icon-folder-minus"></span>Inactivar Curso</a></li>
                 </ul>
             </div>
         </nav>
 
         <div class="contenido">
             
-            <h1>Consultar Matricula</h1>
+            <h1>Consultar curso</h1>
         
             <form action="inactivar-curso.php">
 
@@ -65,6 +66,6 @@
 
     </div>
 
-    <script src="js/configuraciones.js"></script>
+    <script src="../js/configuraciones.js"></script>
 </body>
 </html>

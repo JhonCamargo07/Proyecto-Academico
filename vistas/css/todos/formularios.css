@@ -136,6 +136,12 @@ input{
     background-position: 0px -50px;
 }
 
+.password{
+    color: #000;
+    text-decoration: none;
+    padding: 9.5px;
+}
+
 footer{
     margin-top: 20px;
 }

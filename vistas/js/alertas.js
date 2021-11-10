@@ -4,7 +4,7 @@ var alertaError = () => {
         text:"Verifiquelos e intente nuevamente",
         confirmButtonText: 'Ok, entendí',
         confirmButtonColor: '#0EA3E3',
-        imageUrl: '../vistas/imagenes/error.gif',
+        imageUrl: '../../vistas/imagenes/error.gif',
         imageWidth: 135,
         imageHeight: 135,
         timer: 9990,
